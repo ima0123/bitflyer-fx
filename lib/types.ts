@@ -103,3 +103,12 @@ export interface BrokerAdapter {
   getBtcPosition(): Promise<number>;
   fetchQuotes(): Promise<Quote[]>;
 }
+
+export enum BoardState {
+    NORMAL = 'Normal',
+    BUSY = 'BUSY',
+    VERY_BUSY = 'VERY BUSY',
+    SUPER_BUSY = 'SUPER BUSY',
+    NO_ORDER = 'NO ORDER',
+    STOP = 'STOP'
+}

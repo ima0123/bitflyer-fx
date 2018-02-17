@@ -15,6 +15,7 @@ import {
   PositionsResponse,
   FXPosition
 } from './brokerTypes';
+import { BoardState } from './types';
 
 export default class BrokerApi {
   private readonly baseUrl = 'https://api.bitflyer.jp';
@@ -53,6 +54,11 @@ export default class BrokerApi {
   async getBoard(): Promise<BoardResponse> {
     const path = '/v1/board?product_code=FX_BTC_JPY';
     return new BoardResponse(await this.webClient.fetch<BoardResponse>(path, undefined, false));
+  }
+
+  async getBoardState(): Promise<BoardState> {
+    const path = '/v1/getboardstate';
+    return await this.get<BoardState>(path);
   }
 
   private async call<R>(path: string, method: string, body: string = ''): Promise<R> {

@@ -1,15 +1,15 @@
 ﻿import {
-  BrokerAdapter,
-  OrderStatus,
-  OrderType,
-  TimeInForce,
-  OrderSide,
-  CashMarginType,
-  QuoteSide,
-  Order,
-  Execution,
-  Quote,
-  BrokerConfigType
+    BrokerAdapter,
+    OrderStatus,
+    OrderType,
+    TimeInForce,
+    OrderSide,
+    CashMarginType,
+    QuoteSide,
+    Order,
+    Execution,
+    Quote,
+    BrokerConfigType, BoardState
 } from './types';
 import { getLogger } from './logger';
 import * as _ from 'lodash';
@@ -174,4 +174,8 @@ export default class BrokerAdapterImpl implements BrokerAdapter {
       .value();
     return _.concat(asks, bids);
   }
+
+    async getBoardState(): Promise<BoardState> {
+        return await this.brokerApi.getBoardState();
+    }
 } /* istanbul ignore next */
