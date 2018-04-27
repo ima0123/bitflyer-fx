@@ -19,9 +19,9 @@ import { eRound, toExecution } from './util';
 
 export default class BrokerAdapterImpl implements BrokerAdapter {
   private readonly brokerApi: BrokerApi;
-  private readonly log = getLogger('BitflyerFX.BrokerAdapter');
+  private readonly log = getLogger('BitflyerFx.BrokerAdapter');
   private readonly productCode = 'FX_BTC_JPY';
-  readonly broker = 'BitflyerFX';
+  readonly broker = 'BitflyerFx';
 
   constructor(private readonly config: BrokerConfigType) {
     this.brokerApi = new BrokerApi(this.config.key, this.config.secret);
