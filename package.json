@@ -1,5 +1,5 @@
 {
-  "name": "@bitr/bitflyer-fx",
+  "name": "@ima0123/bitflyer-fx",
   "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
