@@ -141,7 +141,8 @@ export default class BrokerAdapterImpl implements BrokerAdapter {
       child_order_type: childOrderType,
       side: OrderSide[order.side].toUpperCase(),
       size: order.size,
-      time_in_force: timeInForce
+      time_in_force: timeInForce,
+      leverage: order.leverageLevel ? order.leverageLevel : 10
     };
   }
 

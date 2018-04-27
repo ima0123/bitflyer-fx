@@ -24,6 +24,7 @@ export interface SendChildOrderRequest {
   size: number;
   minute_to_expire?: number;
   time_in_force?: string;
+  leverage: number;
 }
 
 export class SendChildOrderResponse extends Castable {
